@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'alias ll="ls -l"' > /root/.bashrc
+echo 'alias ll="ls -l"' >> /root/.bashrc

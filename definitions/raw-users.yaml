@@ -1,0 +1,31 @@
+apiVersion: 1.0
+image:
+  arch: x86_64
+  imageType: raw
+  baseImage: SLE-Micro.x86_64-5.5.0-Default-GM.raw
+  outputImageName: ./out/eib-image.raw
+operatingSystem:
+  groups:
+    - name: group1
+      gid:  1500
+    - name: group2
+    - name: group3
+    - name: group4
+  users:
+    - username: root
+      encryptedPassword: $6$r2bo4ZUwh6Tnhi61$rTJJWWAaDB3Hk/NAkdJgFH26eJSE8NAIL/HjpO7Lunm0hQKNhvnKGEvoWMjduOIZKi4cB5KbOhEQZNjguLcMR/
+    - username: jdob
+      sshKeys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsc0LyyDie9jRROzORapuhjmQCwu7EyEOLlX+zezQYMlWFF/ElrwR3DIaY976PbdSvgdn6kciiGT3i1fvRCFehtX0idaa+ESJqf2Lb5bUp8PZxD7FCJH1qOWgwnOyORZUNLRyBQB4n6nh7c8AK255tNhA8AOOTKZNKPKtDQSQpB+TcuCs8pIcKiqAyPoeiJDvpRqWbWaFsUUiN8p8W1G/fhSj85SOG7mmJzv9JWeGQ6GsZC4vVRhBAZT7IH2L2hn4rdMsGaSlzRCmnmnqKiH6rlQMVa2BY5dMTeG5KgISR98H7Dmxu1v+wrOW639W14rgPWMR0+niTOXk6XbAI24sP 11-16-2011
+    - username: ironman
+      uid: 2000
+      encryptedPassword: $6$r2bo4ZUwh6Tnhi61$rTJJWWAaDB3Hk/NAkdJgFH26eJSE8NAIL/HjpO7Lunm0hQKNhvnKGEvoWMjduOIZKi4cB5KbOhEQZNjguLcMR/
+      createHome: true
+      primaryGroup: group1
+      secondaryGroups:
+        - group2
+    - username: hulk
+      encryptedPassword: $6$r2bo4ZUwh6Tnhi61$rTJJWWAaDB3Hk/NAkdJgFH26eJSE8NAIL/HjpO7Lunm0hQKNhvnKGEvoWMjduOIZKi4cB5KbOhEQZNjguLcMR/
+      secondaryGroups:
+        - group3
+        - group4
